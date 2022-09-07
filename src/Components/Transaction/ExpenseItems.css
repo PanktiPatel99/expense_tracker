@@ -2,8 +2,30 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  gap: 10px;
   padding: 10px;
+}
+
+.search {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.search p {
+  text-align: start;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+
+.search input {
+  font-size: 18px;
+  margin: 10px 0px;
+  padding: 10px 12px;
+  background: #fdfeff;
+  /* background: #e6e8e9; */
+  width: 94%;
 }
 
 table {
