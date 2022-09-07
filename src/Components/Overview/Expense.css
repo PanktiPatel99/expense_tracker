@@ -1,0 +1,58 @@
+.Expense {
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.balance-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 50%;
+}
+
+.btn {
+  background: black;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.balance {
+  color: blue;
+  font-weight: bold;
+}
+
+.expense_income_box {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 50%;
+}
+
+.expensebox {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #e6e8e9;
+  padding: 15px 20px;
+  width: 50%;
+}
+
+span {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.isExpense {
+  color: red;
+}
+
+.isIncome {
+  color: green;
+}
