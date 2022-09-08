@@ -3,7 +3,7 @@ import "./Expense.css";
 
 import AddExpense from "./AddExpense";
 
-const Expense = ({ expense, setExpense }) => {
+const Expense = (props) => {
   const [isAddTxnVisible, toggleAddtxn] = useState(false);
 
   const handleAddTxn = () => {
@@ -14,7 +14,8 @@ const Expense = ({ expense, setExpense }) => {
     <div className="Expense">
       <div className="balance-box">
         <p>
-          Balance: $<span className="balance">1000</span>
+          Balance:s
+          <span className="balance"> ${props.income - props.expense}</span>
         </p>
         <button className="btn" onClick={handleAddTxn}>
           {isAddTxnVisible ? "Cancel" : "ADD"}
@@ -24,17 +25,16 @@ const Expense = ({ expense, setExpense }) => {
       {isAddTxnVisible && (
         <AddExpense
           toggleAddtxn={toggleAddtxn}
-          expense={expense}
-          setExpense={setExpense}
+          addTransaction={props.addTransaction}
         />
       )}
 
       <div className="expense_income_box">
         <p className="expensebox">
-          Expense: <span className="isExpense">$0 </span>
+          Expense: <span className="isExpense">${props.expense}</span>
         </p>
         <p className="expensebox">
-          Income: <span className="isIncome">$0 </span>
+          Income: <span className="isIncome">${props.income}</span>
         </p>
       </div>
     </div>

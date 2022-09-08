@@ -1,0 +1,49 @@
+.Transaction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 22px;
+  width: 372px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+input {
+  font-size: 16px;
+  padding: 8px 12px;
+  background: #fdfeff;
+  background: #e6e8e9;
+  width: 94%;
+}
+
+.Transaction input {
+  margin-bottom: 10px;
+}
+
+.TransactionCell {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: normal;
+  padding: 5px 10px;
+  font-size: 16px;
+  width: 350px;
+  border: 2px solid #e6e8e9;
+}
+
+.cell {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 300;
+  padding: 10px 0px;
+  font-size: 12px;
+  width: 100%;
+}
+
+.date {
+  text-align: left;
+}

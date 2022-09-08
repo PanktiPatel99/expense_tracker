@@ -11,7 +11,6 @@ const AddExpense = (props) => {
     title: "",
     amount: "",
     date: "",
-    type: type,
   });
 
   const handleAddFormChange = (e) => {
@@ -22,80 +21,84 @@ const AddExpense = (props) => {
 
     const newFormData = { ...addFormData };
     newFormData[fieldName] = fieldValue;
-    setType(e.target.value);
     // console.log(newFormData);
 
     setAddFormData(newFormData);
   };
-  const handleAddFormSubmit = (e) => {
+
+  const handleAddClick = (e) => {
     e.preventDefault();
 
-    const newExpense = {
+    // const newExpense = {
+    //   id: nanoid(),
+    //   title: addFormData.title,
+    //   amount: Number(addFormData.amount),
+    //   date: new Date(addFormData.date),
+    //   type: type,
+    // };
+    // // console.log(addFormData);
+    // const newExpenses = [...expense, newExpense];
+    // // console.log(newExpenses);
+    // setExpense(newExpenses);
+
+    props.addTransaction({
       id: nanoid(),
       title: addFormData.title,
       amount: Number(addFormData.amount),
       date: new Date(addFormData.date),
-      type: addFormData.type,
-    };
-    // console.log(addFormData);
-
-    const newExpenses = [...expense, newExpense];
-    // console.log(newExpenses);
-
-    setExpense(newExpenses);
+      type: type,
+    });
     props.toggleAddtxn();
   };
 
   return (
-    <form onSubmit={handleAddFormSubmit}>
-      <div className="AddExpense_form">
-        <input
-          type="text"
-          name="title"
-          placeholder="Enter a Title"
-          required
-          onChange={handleAddFormChange}
-        ></input>
-        <input
-          type="number"
-          name="amount"
-          placeholder="Enter an Amount"
-          required
-          onChange={handleAddFormChange}
-        ></input>
-        <input
-          type="date"
-          name="date"
-          required
-          onChange={handleAddFormChange}
-        ></input>
+    <div className="AddExpense_form">
+      <input
+        type="text"
+        name="title"
+        placeholder="Enter a Title"
+        required
+        onChange={handleAddFormChange}
+      ></input>
+      <input
+        type="number"
+        name="amount"
+        placeholder="Enter an Amount"
+        required
+        onChange={handleAddFormChange}
+      ></input>
+      <input
+        type="date"
+        name="date"
+        required
+        onChange={handleAddFormChange}
+      ></input>
 
-        <div className="radiobox">
-          <input
-            type="radio"
-            name="type"
-            value="EXPENSE"
-            id="expense"
-            checked={type === "EXPENSE"}
-            onChange={handleAddFormChange}
-          />
-          <label htmlFor="expense">Expense</label>
-          <input
-            type="radio"
-            name="type"
-            value="INCOME"
-            id="income"
-            checked={type === "INCOME"}
-            onChange={handleAddFormChange}
-          />
-          <label htmlFor="income">Income</label>
-        </div>
-
-        <button className="btn" type="submit">
-          Add Transaction
-        </button>
+      <div className="radiobox">
+        <input
+          type="radio"
+          name="type"
+          value="EXPENSE"
+          id="expense"
+          checked={type === "EXPENSE"}
+          onChange={(e) => setType(e.target.value)}
+        />
+        <label htmlFor="expense">Expense</label>
+        <input
+          type="radio"
+          name="type"
+          value="INCOME"
+          id="income"
+          checked={type === "INCOME"}
+          onChange={(e) => setType(e.target.value)}
+        />
+        <label htmlFor="income">Income</label>
       </div>
-    </form>
+
+      <button className="btn" type="submit" onClick={handleAddClick}>
+        Add Transaction
+      </button>
+    </div>
   );
 };
 

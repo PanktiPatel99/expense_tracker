@@ -13,6 +13,7 @@
   align-items: center;
   flex-direction: row;
   width: 100%;
+  font-weight: bold;
 }
 
 .btn {
@@ -42,6 +43,7 @@
   border: 2px solid #e6e8e9;
   padding: 15px 20px;
   width: 100%;
+  font-weight: bold;
 }
 
 span {
