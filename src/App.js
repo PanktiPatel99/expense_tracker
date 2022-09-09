@@ -7,6 +7,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">Expense Tracker App</header>
       <ExpenseApp />
+      
     </div>
   );
 };
