@@ -37,7 +37,7 @@ const ExpenseApp = (props) => {
         income={income}
       />
       <Transaction transaction={transaction} />
-      {/* <ExpenseItems /> */}
+      <ExpenseItems />
     </div>
   );
 };
